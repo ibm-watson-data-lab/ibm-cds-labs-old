@@ -18,8 +18,8 @@ var github = new GitHubApi({
 
 github.authenticate({
   type: 'basic',
-  username: GITHUB_USER,
-  password: GITHUB_PASS,
+  username: "GITHUB_USER",
+  password: "GITHUB_PASS",
 });
 
 module.exports = function(grunt) {
