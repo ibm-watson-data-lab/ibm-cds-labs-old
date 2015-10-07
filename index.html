@@ -1,0 +1,28 @@
+---
+layout: default
+title: IBM Cloud Data Service
+---
+<p>Our selected GH</p>
+{{ site.posts }}
+{% for post in site.repos %}
+  <div class="col-md-3" >
+    <div class="row" >
+      <h2>{{ post.name }}</h2>
+      <p>{{ post.description }}</p>
+    </div>
+    <div class="row" >
+      <div class="col-md-1" >
+        Stars: {{ post.stars }}
+      </div>
+      <div class="col-md-1" >
+        Forks: {{ post.forks }}
+      </div>
+      <div class="col-md-1" >
+        Watchers: {{ post.watchers }}
+      </div>
+    </div>
+    <div class="row" >
+      <p>{{ post.languages }}</p>
+    </div>
+  </div>
+{% endfor %}
