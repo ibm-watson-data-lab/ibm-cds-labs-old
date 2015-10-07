@@ -127,6 +127,11 @@ module.exports = function(grunt) {
         };
         github.repos.get({user:user,repo:repo}, function(err, res) {
 
+          if (err) {
+            console.log('ERROR',err);
+            done;
+          }
+
           repoDetails.name = res.name;
           repoDetails.fullName = res.full_name;
           repoDetails.id = res.id;
