@@ -237,6 +237,40 @@ module.exports = function(grunt) {
         var result = urlParse[4].split('/');
         var user = result[1];
         var repo = result[2];
+<<<<<<< HEAD
+=======
+        var repoDetails = {
+          name: '',
+          description: '',
+          watchers: 0,
+          stars: 0,
+          forks: 0,
+          languages: [],
+        };
+        github.repos.get({user:user,repo:repo}, function(err, res) {
+
+          if (err) {
+            console.log('ERROR',err);
+            done;
+          }
+
+          repoDetails.name = res.name;
+          repoDetails.fullName = res.full_name;
+          repoDetails.id = res.id;
+          repoDetails.description = res.description;
+          repoDetails.watchers = res.watchers_count;
+          repoDetails.stars = res.stargazers_count;
+          repoDetails.forks = res.forks_count;
+
+          github.repos.getLanguages({user:user,repo:repo}, function(err, res) {
+            _.forEach(res, function(n, key) {
+              if (typeof n === 'number') {
+                if (repoDetails.languages.indexOf(key) < 0) {
+                  repoDetails.languages.push(key);
+                }
+              }
+            });
+>>>>>>> Add a bit of error checking
 
         if (urlParse[2] === 'github') {
 
