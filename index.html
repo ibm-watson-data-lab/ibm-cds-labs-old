@@ -1,60 +1,28 @@
-<!DOCTYPE html>
-<html>
-<meta charset="utf-8">
-<title>IBM Cloud Data Service</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Style -->
-<link rel="stylesheet" href="/css/app.css">
-<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-
-<!-- JavaScript -->
-<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js" ></script>
-<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
-
-<!-- Shiv -->
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-
-<body>
-
-  
-
-  <div id="content">
-    <div class="container">
-      <div class="col-md-10 col-md-offset-1">
-
-        <p>Our selected GH</p>
-
-
+---
+layout: default
+title: IBM Cloud Data Service
+---
+<p>Our selected GH</p>
+{{ site.posts }}
+{% for post in site.repos %}
   <div class="col-md-3" >
     <div class="row" >
-      <h2>simple-search-service</h2>
-      <p>Search Engine as a Micro Service</p>
+      <h2>{{ post.name }}</h2>
+      <p>{{ post.description }}</p>
     </div>
     <div class="row" >
       <div class="col-md-1" >
-        Stars: 1
+        Stars: {{ post.stars }}
       </div>
       <div class="col-md-1" >
-        Forks: 1
+        Forks: {{ post.forks }}
       </div>
       <div class="col-md-1" >
-        Watchers: 1
+        Watchers: {{ post.watchers }}
       </div>
     </div>
     <div class="row" >
-      <p>JavaScript, HTML, CSS</p>
+      <p>{{ post.languages }}</p>
     </div>
   </div>
-
-
-
-      </div>
-    </div>
-  </div>
-
-  
-</body>
-</html>
+{% endfor %}
