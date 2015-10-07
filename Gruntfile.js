@@ -62,7 +62,7 @@ module.exports = function(grunt) {
     },
     buildcontrol: {
       options: {
-        dir: '_site',
+        dir: './',
         commit: true,
         push: true,
         message: 'Build from %sourceCommit% on a branch %sourceBranch%',
