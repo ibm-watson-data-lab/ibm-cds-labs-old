@@ -234,8 +234,6 @@ module.exports = function(grunt) {
         var result = urlParse[4].split('/');
         var user = result[1];
         var repo = result[2];
-<<<<<<< HEAD
-=======
         var repoDetails = {
           name: '',
           description: '',
@@ -267,7 +265,6 @@ module.exports = function(grunt) {
                 }
               }
             });
->>>>>>> Add a bit of error checking
 
         if (urlParse[2] === 'github') {
 
