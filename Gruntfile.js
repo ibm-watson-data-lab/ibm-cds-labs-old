@@ -17,9 +17,6 @@ var github = new GitHubApi({
 });
 
 github.authenticate({
-  // type: 'basic',
-  // username: "ukmadlz",
-  // password: "4nth0ny",
   type: "oauth",
   token: process.env.GITHUBTOKEN,
 });
@@ -200,7 +197,7 @@ module.exports = function(grunt) {
         command: 'jekyll build',
       },
       jekyllServe: {
-        command: 'jekyll serve --watch',
+        command:   'jekyll serve --watch',
       },
     },
     http: {
