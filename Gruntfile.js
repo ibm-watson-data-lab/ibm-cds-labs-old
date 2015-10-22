@@ -101,7 +101,7 @@ module.exports = function(grunt) {
             postDetails += '\n';
             postDetails += '---';
 
-            grunt.file.write('_repos/' + repoDetails.id + '.md', postDetails);
+            grunt.file.write('_selectedrepos/' + repoDetails.id + '.md', postDetails);
 
           }
         });
@@ -137,7 +137,7 @@ module.exports = function(grunt) {
         postDetails += '\n';
         postDetails += '---';
 
-        grunt.file.write('_repos/gist_' + res.id + '.md', postDetails);
+        grunt.file.write('_selectedrepos/gist_' + res.id + '.md', postDetails);
       }
     });
   };
