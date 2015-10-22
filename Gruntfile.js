@@ -17,9 +17,6 @@ var github = new GitHubApi({
 });
 
 github.authenticate({
-  // type: 'basic',
-  // username: "***REMOVED***",
-  // password: "***REMOVED***",
   type: "oauth",
   token: process.env.GITHUBTOKEN,
 });
