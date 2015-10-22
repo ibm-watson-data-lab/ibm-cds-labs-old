@@ -17,12 +17,126 @@ var github = new GitHubApi({
 });
 
 github.authenticate({
-  type: 'basic',
-  username: "GITHUB_USER",
-  password: "GITHUB_PASS",
+  // type: 'basic',
+  // username: "***REMOVED***",
+  // password: "***REMOVED***",
+  type: "oauth",
+  token: process.env.GITHUBTOKEN,
 });
 
 module.exports = function(grunt) {
+
+  // GitHub Functions
+  var processGithubRepo = function(user, repo, url, tech, level, done) {
+
+    var repoDetails = {
+      name: '',
+      description: '',
+      watchers: 0,
+      stars: 0,
+      forks: 0,
+      languages: [],
+      tech: tech,
+      level: level,
+    };
+    github.repos.get({user:user, repo:repo}, function(err, res) {
+
+      if (err) {
+        console.log('ERROR', err, res, user, repo);
+        done();
+      } else {
+
+        repoDetails.name = res.name;
+        repoDetails.fullName = res.full_name;
+        repoDetails.id = res.id;
+        repoDetails.description = res.description;
+        repoDetails.watchers = res.watchers_count;
+        repoDetails.stars = res.stargazers_count;
+        repoDetails.forks = res.forks_count;
+
+        var repoCreds = res.full_name.split("/");
+
+        github.repos.getLanguages({user:repoCreds[0], repo:repoCreds[1]}, function(err, res) {
+
+          if (err) {
+            console.log('ERROR LANGUAGES', err, res);
+            done();
+          } else {
+
+            _.forEach(res, function(n, key) {
+              if (typeof n === 'number') {
+                if (repoDetails.languages.indexOf(key) < 0) {
+                  repoDetails.languages.push(key);
+                }
+              }
+            });
+
+            console.log('Adding: ' + repoDetails.fullName);
+
+            var postDetails = '---';
+            postDetails += '\n';
+            postDetails += 'layout: default';
+            postDetails += '\n';
+            postDetails += 'title: ' + repoDetails.name;
+            postDetails += '\n';
+            postDetails += 'name: ' + repoDetails.name;
+            postDetails += '\n';
+            postDetails += 'fullname: ' + repoDetails.fullName;
+            postDetails += '\n';
+            postDetails += 'description: ' + repoDetails.description;
+            postDetails += '\n';
+            postDetails += 'watchers: ' + repoDetails.watchers;
+            postDetails += '\n';
+            postDetails += 'stars: ' + repoDetails.stars;
+            postDetails += '\n';
+            postDetails += 'forks: ' + repoDetails.forks;
+            postDetails += '\n';
+            postDetails += 'languages: ' + repoDetails.languages.join(', ');
+            postDetails += '\n';
+            postDetails += 'giturl: ' + url;
+            postDetails += '\n';
+            postDetails += '---';
+
+            grunt.file.write('_repos/' + repoDetails.id + '.md', postDetails);
+
+          }
+        });
+
+      }
+    });
+  };
+
+  var processGithubGist = function(id, url, done) {
+    github.gists.get({id:id}, function(err, res) {
+      if (err) {
+        console.log('ERROR', err, res);
+        done();
+      } else {
+
+        console.log('Adding: ' + res.html_url);
+
+        var postDetails = '---';
+        postDetails += '\n';
+        postDetails += 'layout: default';
+        postDetails += '\n';
+        postDetails += 'title: ' + res.html_url;
+        postDetails += '\n';
+        postDetails += 'name: ' + res.html_url;
+        postDetails += '\n';
+        postDetails += 'fullname: ' + res.html_url;
+        postDetails += '\n';
+        postDetails += 'description: ' + res.description;
+        postDetails += '\n';
+        postDetails += 'forks: ' + res.forks.length;
+        postDetails += '\n';
+        postDetails += 'giturl: ' + url;
+        postDetails += '\n';
+        postDetails += '---';
+
+        grunt.file.write('_repos/gist_' + res.id + '.md', postDetails);
+      }
+    });
+  };
 
   // Project configuration
   grunt.initConfig({
@@ -83,12 +197,13 @@ module.exports = function(grunt) {
       },
       jekyllServe: {
         command: 'jekyll serve --watch',
-      }
+      },
     },
     http: {
       repos: {
         options: {
-          url: 'https://d14f43e9-5102-45bc-b394-c92520c2c0bd-bluemix.cloudant.com/dw/_design/search/_search/search?q=*%3A*&limit=20&counts=%5B%22topic%22%2C%22technology%22%2C%22type%22%2C%22level%22%2C%22language%22%5D&include_docs=true&sort=%5B%22-date%22%5D',
+          // url: 'https://d14f43e9-5102-45bc-b394-c92520c2c0bd-bluemix.cloudant.com/dw/_design/search/_search/search?q=*%3A*&limit=20&counts=%5B%22topic%22%2C%22technology%22%2C%22type%22%2C%22level%22%2C%22language%22%5D&include_docs=true&sort=%5B%22-date%22%5D',
+          url: 'https://3885a4a7-634c-4ade-83fe-966ea8a8d8c7-bluemix.cloudant.com/devcenter/_design/github/_view/github?limit=20&reduce=false&include_docs=true',
         },
         dest: 'github-repos.json',
       },
@@ -111,76 +226,27 @@ module.exports = function(grunt) {
 
       var repos = grunt.file.readJSON('github-repos.json');
 
-
-
       for (var i = 0; i < repos.rows.length; i++) {
         var url = repos.rows[i].doc.url;
-        url = 'https://github.com/ibm-cds-labs/simple-search-service';
         var regex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-        var result = url.match(regex)[4].split("/");
+        var urlParse = url.match(regex);
+        var result = urlParse[4].split('/');
         var user = result[1];
         var repo = result[2];
-        var repoDetails = {
-          name: '',
-          description: '',
-          watchers: 0,
-          stars: 0,
-          forks: 0,
-          languages: [],
-        };
-        github.repos.get({user:user,repo:repo}, function(err, res) {
 
-          if (err) {
-            console.log('ERROR',err);
-            done;
-          }
+        if (urlParse[2] === 'github') {
 
-          repoDetails.name = res.name;
-          repoDetails.fullName = res.full_name;
-          repoDetails.id = res.id;
-          repoDetails.description = res.description;
-          repoDetails.watchers = res.watchers_count;
-          repoDetails.stars = res.stargazers_count;
-          repoDetails.forks = res.forks_count;
+          processGithubRepo(user, repo, url, repos.rows[i].doc.technologies, repos.rows[i].doc.level, done);
 
-          github.repos.getLanguages({user:user,repo:repo}, function(err, res) {
-            _.forEach(res, function(n, key) {
-              if (typeof n === 'number') {
-                if (repoDetails.languages.indexOf(key) < 0) {
-                  repoDetails.languages.push(key);
-                }
-              }
-            });
+        } else {
 
-            console.log('Adding: ' + repoDetails.fullName);
+          processGithubGist(repo, url, done);
 
-            var postDetails = '---';
-            postDetails += '\n';
-            postDetails += 'layout: default';
-            postDetails += '\n';
-            postDetails += 'title: ' + repoDetails.name;
-            postDetails += '\n';
-            postDetails += 'name: ' + repoDetails.name;
-            postDetails += '\n';
-            postDetails += 'description: ' + repoDetails.description;
-            postDetails += '\n';
-            postDetails += 'watchers: ' + repoDetails.watchers;
-            postDetails += '\n';
-            postDetails += 'stars: ' + repoDetails.stars;
-            postDetails += '\n';
-            postDetails += 'forks: ' + repoDetails.forks;
-            postDetails += '\n';
-            postDetails += 'languages: ' + repoDetails.languages.join(', ');
-            postDetails += '\n';
-            postDetails += '---';
+        }
 
-            grunt.file.write('_repos/' + repoDetails.id + '.md', postDetails);
-
-            if (i === (repos.rows.length - 1)) {
-              done();
-            }
-          });
-        });
+        if (i === (repos.rows.length - 1)) {
+          done();
+        }
       }
     });
 

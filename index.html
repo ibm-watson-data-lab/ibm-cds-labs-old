@@ -5,9 +5,9 @@ title: IBM Cloud Data Service
 <p>Our selected GH</p>
 {{ site.posts }}
 {% for post in site.repos %}
-  <div class="col-md-3" >
+  <div class="col-md-6" >
     <div class="row" >
-      <h2>{{ post.name }}</h2>
+      <h2><a href="{{ post.giturl }}" >{{ post.name }}</a></h2>
       <p>{{ post.description }}</p>
     </div>
     <div class="row" >
@@ -22,7 +22,9 @@ title: IBM Cloud Data Service
       </div>
     </div>
     <div class="row" >
+      <p>{{ post.tech }}</p>
       <p>{{ post.languages }}</p>
+      <p>{{ post.level }}</p>
     </div>
   </div>
 {% endfor %}
