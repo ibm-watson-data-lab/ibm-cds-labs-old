@@ -75,6 +75,9 @@ module.exports = function(grunt) {
       },
     },
     shell: {
+      jekyllInstall: {
+        command: 'bundle install',
+      },
       jekyllBuild: {
         command: 'jekyll build',
       },
