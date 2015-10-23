@@ -2,29 +2,29 @@
 layout: default
 title: IBM Cloud Data Service
 ---
-<p>Our selected GH</p>
-{{ site.posts }}
 {% for post in site.selectedrepos %}
-  <div class="col-md-6" >
-    <div class="row" >
-      <h2><a href="{{ post.giturl }}" >{{ post.name }}</a></h2>
-      <p>{{ post.description }}</p>
-    </div>
-    <div class="row" >
-      <div class="col-md-2" >
-        Stars: {{ post.stars }}
+  <div class="{{ post.languages }}" >
+    <div class="col-md-6" >
+      <div class="row" >
+        <h2><a href="{{ post.giturl }}" >{{ post.name }}</a></h2>
+        <p>{{ post.description }}</p>
       </div>
-      <div class="col-md-2" >
-        Forks: {{ post.forks }}
+      <div class="row" >
+        <div class="col-md-2" >
+          Stars: {{ post.stars }}
+        </div>
+        <div class="col-md-2" >
+          Forks: {{ post.forks }}
+        </div>
+        <div class="col-md-2" >
+          Watchers: {{ post.watchers }}
+        </div>
       </div>
-      <div class="col-md-2" >
-        Watchers: {{ post.watchers }}
+      <div class="row" >
+        <p>Tech: {{ post.tech }}</p>
+        <p>Languages: {{ post.languages }}</p>
+        <p>Level: {{ post.level }}</p>
       </div>
-    </div>
-    <div class="row" >
-      <p>Tech: {{ post.tech }}</p>
-      <p>Languages: {{ post.languages }}</p>
-      <p>Level: {{ post.level }}</p>
     </div>
   </div>
 {% endfor %}
