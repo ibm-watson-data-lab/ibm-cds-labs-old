@@ -199,6 +199,9 @@ module.exports = function(grunt) {
       jekyllServe: {
         command:   'jekyll serve --watch',
       },
+      chmaster: {
+        command: 'git checkout master',
+      },
     },
     http: {
       repos: {
@@ -255,6 +258,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint',]);
   grunt.registerTask('getGithub', ['http:repos', 'processGithub']);
   grunt.registerTask('build', ['default', 'getGithub', 'shell:jekyllBuild']);
-  grunt.registerTask('deploy', ['build', 'buildcontrol']);
+  grunt.registerTask('deploy', ['build', 'buildcontrol', 'shell:chmaster']);
   grunt.registerTask('serve', 'Run presentation locally and start watch process (living document).', ['build', 'shell:jekyllServe']);
 };
