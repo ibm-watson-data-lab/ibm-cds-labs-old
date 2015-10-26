@@ -188,6 +188,12 @@ module.exports = function(grunt) {
           remote: 'git@github.com:ibm-cds-labs/ibm-cds-labs.github.io.git',
         },
       },
+      master: {
+        options: {
+          branch: 'master',
+          remote: 'git@github.com:ibm-cds-labs/ibm-cds-labs.github.io.git',
+        },
+      },
     },
     shell: {
       jekyllInstall: {
@@ -206,8 +212,7 @@ module.exports = function(grunt) {
     http: {
       repos: {
         options: {
-          // url: 'https://d14f43e9-5102-45bc-b394-c92520c2c0bd-bluemix.cloudant.com/dw/_design/search/_search/search?q=*%3A*&limit=20&counts=%5B%22topic%22%2C%22technology%22%2C%22type%22%2C%22level%22%2C%22language%22%5D&include_docs=true&sort=%5B%22-date%22%5D',
-          url: 'https://3885a4a7-634c-4ade-83fe-966ea8a8d8c7-bluemix.cloudant.com/devcenter/_design/github/_view/github?limit=20&reduce=false&include_docs=true',
+          url: 'https://3885a4a7-634c-4ade-83fe-966ea8a8d8c7-bluemix.cloudant.com/devcenter/_design/github/_view/github?reduce=false&include_docs=true',
         },
         dest: 'github-repos.json',
       },
@@ -224,7 +229,7 @@ module.exports = function(grunt) {
   // Custom Tasks
   grunt.registerTask('processGithub',
     'Get the GitHub URLs for the approved repo\'s',
-    function() {
+    function(withoutGist) {
 
       var done = this.async();
 
@@ -244,7 +249,9 @@ module.exports = function(grunt) {
 
         } else {
 
-          processGithubGist(repo, url, done);
+          if (typeof withoutGist === 'undefined') {
+            processGithubGist(repo, url, done);
+          }
 
         }
 
@@ -257,7 +264,9 @@ module.exports = function(grunt) {
   // Default task
   grunt.registerTask('default', ['jshint',]);
   grunt.registerTask('getGithub', ['http:repos', 'processGithub']);
+  grunt.registerTask('getGithubWithoutGist', ['http:repos', 'processGithub:no']);
   grunt.registerTask('build', ['default', 'getGithub', 'shell:jekyllBuild']);
-  grunt.registerTask('deploy', ['build', 'buildcontrol', 'shell:chmaster']);
-  grunt.registerTask('serve', 'Run presentation locally and start watch process (living document).', ['build', 'shell:jekyllServe']);
+  grunt.registerTask('buildNoGist', ['default', 'getGithubWithoutGist', 'shell:jekyllBuild']);
+  grunt.registerTask('deploy', ['buildcontrol', 'shell:chmaster']);
+  grunt.registerTask('serve', 'Run presentation locally and start watch process (living document).', ['shell:jekyllServe']);
 };
