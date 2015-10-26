@@ -264,7 +264,7 @@ module.exports = function(grunt) {
     });
 
   // Default task
-  grunt.registerTask('default', ['jshint',]);
+  grunt.registerTask('default', ['jshint']);
   grunt.registerTask('getGithub', ['http:repos', 'clean', 'processGithub']);
   grunt.registerTask('getGithubWithoutGist', ['http:repos', 'clean', 'processGithub:no']);
   grunt.registerTask('build', ['default', 'getGithub', 'shell:jekyllBuild']);

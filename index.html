@@ -10,20 +10,28 @@ title: IBM Cloud Data Service
         <p>{{ post.description }}</p>
       </div>
       <div class="row" >
-        <div class="col-md-2" >
-          Stars: {{ post.stars }}
+        <div class="col-md-6" >
+          <i class="fa fa-star-o" ></i> Stars: <strong>{{ post.stars }}</strong>
         </div>
-        <div class="col-md-2" >
-          Forks: {{ post.forks }}
-        </div>
-        <div class="col-md-2" >
-          Watchers: {{ post.watchers }}
+        <div class="col-md-6" >
+          Tech: {{ post.tech }}
         </div>
       </div>
       <div class="row" >
-        <p>Tech: {{ post.tech }}</p>
-        <p>Languages: {{ post.languages }}</p>
-        <p>Level: {{ post.level }}</p>
+        <div class="col-md-6" >
+          <i class="fa fa-code-fork" ></i> Forks: <strong>{{ post.forks }}</strong>
+        </div>
+        <div class="col-md-6" >
+          Languages: {{ post.languages }}
+        </div>
+      </div>
+      <div class="row" >
+        <div class="col-md-6" >
+          <i class="fa fa-eye" ></i> Watchers: <strong>{{ post.watchers }}</strong>
+        </div>
+        <div class="col-md-6" >
+          Level: {{ post.level }}
+        </div>
       </div>
     </div>
   </div>
