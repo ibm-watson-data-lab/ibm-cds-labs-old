@@ -217,6 +217,7 @@ module.exports = function(grunt) {
         dest: 'github-repos.json',
       },
     },
+    clean: ['_selectedrepos'],
   });
 
   // Load all grunt tasks.
@@ -225,6 +226,7 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-build-control');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Custom Tasks
   grunt.registerTask('processGithub',
@@ -263,8 +265,8 @@ module.exports = function(grunt) {
 
   // Default task
   grunt.registerTask('default', ['jshint',]);
-  grunt.registerTask('getGithub', ['http:repos', 'processGithub']);
-  grunt.registerTask('getGithubWithoutGist', ['http:repos', 'processGithub:no']);
+  grunt.registerTask('getGithub', ['http:repos', 'clean', 'processGithub']);
+  grunt.registerTask('getGithubWithoutGist', ['http:repos', 'clean', 'processGithub:no']);
   grunt.registerTask('build', ['default', 'getGithub', 'shell:jekyllBuild']);
   grunt.registerTask('buildNoGist', ['default', 'getGithubWithoutGist', 'shell:jekyllBuild']);
   grunt.registerTask('deploy', ['buildcontrol', 'shell:chmaster']);
