@@ -50,10 +50,11 @@
   margin-top: -20px;
   font-size: 14pt;
   border-bottom: 24px solid #555;
+  margin-bottom: 24px;
 }
 #hero-text {
   position: relative;  
-  top: 40px;
+  top: 56px;
   left: 30px;
 }
 #hero-company {
@@ -63,7 +64,7 @@
   font-weight: 600;
 }
 #hero-title {
-  font-size: 28pt;
+  font-size: 32pt;
   /*color: #ddd;*/
   margin-top: 0.5em;
 }
