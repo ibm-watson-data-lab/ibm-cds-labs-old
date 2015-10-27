@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Featured GitHub Projects
+title: Code Snippets
 ---
-{% for repo in site.selectedrepos %}
+{% for repo in site.selectedgists %}
   {% assign loopindex = forloop.index | modulo: 2 %}
   {% if loopindex == 1 %}
     <div class="row">

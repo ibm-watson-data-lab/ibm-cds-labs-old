@@ -1,4 +1,8 @@
-exclude: [node_modules, bower.json, Gruntfile.js, package.json]
+exclude: [node_modules, bower.json, Gruntfile.js, package.json, LICENSE, README.md]
 collections:
   selectedrepos:
     output: true
+  selectedgists:
+    output: true
+company: IBM
+org: Cloud Data Services Labs

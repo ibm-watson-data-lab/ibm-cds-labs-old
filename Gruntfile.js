@@ -88,9 +88,15 @@ module.exports = function(grunt) {
             postDetails += '\n';
             postDetails += 'forks: ' + repoDetails.forks;
             postDetails += '\n';
-            postDetails += 'languages: ' + repoDetails.languages.join(', ');
+            postDetails += 'languages: \n';
+            for (var i = 0; i < repoDetails.languages.length; i++) {
+              postDetails += '  - ' + repoDetails.languages[i] + '\n';
+            }
             postDetails += '\n';
-            postDetails += 'tech: ' + repoDetails.tech.join(', ');
+            postDetails += 'tech: \n';
+            for (var j = 0; j < repoDetails.tech.length; j++) {
+              postDetails += '  - ' + repoDetails.tech[j] + '\n';
+            }
             postDetails += '\n';
             postDetails += 'level: ' + repoDetails.level;
             postDetails += '\n';
@@ -107,7 +113,9 @@ module.exports = function(grunt) {
     });
   };
 
-  var processGithubGist = function(id, url, done) {
+  var processGithubGist = function(id, url, repo, done) {
+    // testing url: 
+    // https://api.github.com/gists/6044d58e2ae743d7ec5b
     github.gists.get({id:id}, function(err, res) {
       if (err) {
         console.log('ERROR', err, res);
@@ -122,9 +130,12 @@ module.exports = function(grunt) {
         postDetails += '\n';
         postDetails += 'title: ' + res.html_url;
         postDetails += '\n';
-        postDetails += 'name: ' + res.html_url;
+        for (var fs in res.files) {
+          postDetails += 'name: ' + res.files[fs].filename;
+          continue;
+        }
         postDetails += '\n';
-        postDetails += 'fullname: ' + res.html_url;
+        postDetails += 'fullname: ' + repo.full_name;
         postDetails += '\n';
         postDetails += 'description: ' + res.description;
         postDetails += '\n';
@@ -132,9 +143,21 @@ module.exports = function(grunt) {
         postDetails += '\n';
         postDetails += 'giturl: ' + url;
         postDetails += '\n';
+        postDetails += 'languages: \n';
+        for (var i = 0; i < repo.languages.length; i++) {
+          postDetails += '  - ' + repo.languages[i] + '\n';
+        }
+        postDetails += '\n';
+        postDetails += 'tech: \n';
+        for (var j = 0; j < repo.technologies.length; j++) {
+          postDetails += '  - ' + repo.technologies[j] + '\n';
+        }
+        postDetails += '\n';
+        postDetails += 'level: ' + repo.level;
+        postDetails += '\n';
         postDetails += '---';
 
-        grunt.file.write('_selectedrepos/gist_' + res.id + '.md', postDetails);
+        grunt.file.write('_selectedgists/' + res.id + '.md', postDetails);
       }
     });
   };
@@ -217,7 +240,7 @@ module.exports = function(grunt) {
         dest: 'github-repos.json',
       },
     },
-    clean: ['_selectedrepos'],
+    clean: ['_selectedrepos','_selectedgists'],
   });
 
   // Load all grunt tasks.
@@ -252,7 +275,7 @@ module.exports = function(grunt) {
         } else {
 
           if (typeof withoutGist === 'undefined') {
-            processGithubGist(repo, url, done);
+            processGithubGist(repo, url, repos.rows[i].doc, done);
           }
 
         }

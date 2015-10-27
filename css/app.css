@@ -1,0 +1,73 @@
+/* @override
+	http://127.0.0.1:4000/css/app.css
+	http://0.0.0.0:4000/css/app.css
+*/
+
+.repo {
+  color:  #333;
+  background-color: #f2f2f2;
+  border-left: 8px solid #f16a54;
+  border-right: 24px solid #fff;
+  margin-bottom: 24px;
+}
+.description {
+  height: 48px;
+  overflow: hidden;
+}
+.meta {
+  color: #888;
+}
+.meta .githubmetaval {
+  color: #333;
+}
+.techs, .languages, .levels {
+  margin-bottom: 0.65em;
+  overflow: flex;
+}
+.tech, .language, .level {
+  padding: 4px;
+  color: white;
+  border-radius: 4px;
+  margin-right: 4px;
+  font-size: 0.75em;
+}
+
+.tech {
+  background-color: #555;
+}
+.language {
+  background-color: #0096ff;
+}
+.level {
+  background-color: #008f51;
+}
+
+
+#hero {
+  color: white;
+  background: #231f20 url('/img/IBMCodeLabs_header.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  height: 180px;
+  margin-top: -20px;
+  font-size: 14pt;
+  border-bottom: 24px solid #555;
+  margin-bottom: 24px;
+}
+#hero-text {
+  position: relative;
+  top: 48px;
+  left: 30px;
+}
+#hero-company {
+  color: #06a0d3;
+}
+#hero-org {
+  font-weight: 600;
+}
+#hero-title {
+  font-size: 2em;
+  /*color: #ddd;*/
+  margin-top: 0.15em;
+}
