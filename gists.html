@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Featured GitHub Projects
+title: Code Snippets
 ---
-{% for repo in site.selectedrepos %}
+{% for repo in site.selectedgists %}
   {% assign loopindex = forloop.index | modulo: 2 %}
   {% if loopindex == 1 %}
     <div class="row">
@@ -18,15 +18,15 @@ title: Featured GitHub Projects
       <div class="row meta">
         <div id="githubmeta" class="col-md-4">
           <p class="stars">
-            <i class="fa fa-star-o"></i> 
+            <span class="glyphicon glyphicon-star-empty"></span> 
             Stars: <span class="githubmetaval">{{ repo.stars }}</span>
           </p>
           <p class="forks">
-            <i class="fa fa-code-fork"></i> 
+            <span class="glyphicon glyphicon-cutlery"></span> 
             Forks: <span class="githubmetaval">{{ repo.forks }}</span>
           </p>
           <p class="watchers">
-            <i class="fa fa-eye"></i> 
+            <span class="glyphicon glyphicon-eye-open"></span> 
             Watchers: <span class="githubmetaval">{{ repo.watchers }}</span>
           </p>
         </div>
