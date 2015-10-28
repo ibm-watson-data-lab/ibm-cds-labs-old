@@ -15,31 +15,32 @@
   overflow: hidden;
 }
 .meta {
-  color: #888;
+  color: #aaa;
 }
 .meta .githubmetaval {
   color: #333;
 }
 .techs, .languages, .levels {
-  margin-bottom: 0.65em;
-  overflow: flex;
+  margin-bottom: 0.5em;
 }
 .tech, .language, .level {
-  padding: 4px;
-  color: white;
-  border-radius: 4px;
   margin-right: 4px;
   font-size: 0.75em;
+  border: 1px solid #333;
+  background-color: transparent;
 }
 
 .tech {
-  background-color: #555;
+  color: #0096ff;
+  border-color: #0096ff;
 }
 .language {
-  background-color: #0096ff;
+  color: red;
+  border-color: red;
 }
 .level {
-  background-color: #008f51;
+  color: #008f51;
+  border-color: #008f51;
 }
 
 
