@@ -38,7 +38,7 @@ title: Featured GitHub Projects
               Tech:
             </div>
             <div class="col-md-9">
-              {% for tech in repo.tech %}<span class="tech">{{tech}}</span>{% endfor %}
+              {% for tech in repo.tech %}<button class="tech">{{tech}}</button>{% endfor %}
             </div>
           </div>
           <div class="row languages">
@@ -46,7 +46,7 @@ title: Featured GitHub Projects
               Languages:
             </div>
             <div class="col-md-9">
-              {% for lang in repo.languages %}<span class="language">{{lang}}</span>{% endfor %}
+              {% for lang in repo.languages %}<button class="language">{{lang}}</button>{% endfor %}
             </div>
           </div>
           <div class="row levels">
@@ -54,7 +54,7 @@ title: Featured GitHub Projects
               Level:
             </div>
             <div class="col-md-9">
-              <span class="level">{{ repo.level }}</span>
+              <button class="level">{{ repo.level }}</button>
             </div>
           </div>
         </div>
