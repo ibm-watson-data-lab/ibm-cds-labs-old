@@ -7,7 +7,7 @@ title: Featured GitHub Projects
   {% if loopindex == 1 %}
     <div class="row">
   {% endif %}
-    <div class="col-md-6 repo">
+    <div class="col-md-6 repo{% for lang in repo.languages %} lang-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
       <div class="row title">
         <div class="col-md-12">
           <h2><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
@@ -18,15 +18,15 @@ title: Featured GitHub Projects
       <div class="row meta">
         <div id="githubmeta" class="col-md-4">
           <p class="stars">
-            <i class="fa fa-star-o"></i> 
+            <i class="fa fa-star-o"></i>
             Stars: <span class="githubmetaval">{{ repo.stars }}</span>
           </p>
           <p class="forks">
-            <i class="fa fa-code-fork"></i> 
+            <i class="fa fa-code-fork"></i>
             Forks: <span class="githubmetaval">{{ repo.forks }}</span>
           </p>
           <p class="watchers">
-            <i class="fa fa-eye"></i> 
+            <i class="fa fa-eye"></i>
             Watchers: <span class="githubmetaval">{{ repo.watchers }}</span>
           </p>
         </div>
