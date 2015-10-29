@@ -9,9 +9,10 @@
   border-left: 8px solid #f16a54;
   border-right: 24px solid #fff;
   margin-bottom: 24px;
+  /*height: 296px;*/
 }
 .description {
-  height: 48px;
+  height: 38px;
   overflow: hidden;
 }
 .meta {
@@ -71,4 +72,12 @@
   font-size: 2em;
   /*color: #ddd;*/
   margin-top: 0.15em;
+}
+
+.gistpreview {
+  max-height: 256px;
+  margin-bottom: 8px;
+  display: block;
+  overflow: scroll;
+  box-shadow: inset
 }
