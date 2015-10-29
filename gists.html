@@ -10,8 +10,9 @@ title: Code Snippets
     <div class="col-md-6 repo">
       <div class="row title">
         <div class="col-md-12">
-          <h2><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
-          <script src="{{ repo.giturl }}.js"></script>
+          <h3><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h3>
+          <p class="description">{{ repo.description }}</p>
+          <div class="gistpreview"><script src="{{ repo.giturl }}.js"></script></div>
         </div>
       </div>
 
@@ -23,7 +24,7 @@ title: Code Snippets
           </p>
           <p class="forks">
             <i class="fa fa-code-fork"></i>
-            Forks: <button class="githubmetaval">{{ repo.forks }}</button>
+            Forks: <span class="githubmetaval">{{ repo.forks }}</span>
           </p>
         </div>
 
