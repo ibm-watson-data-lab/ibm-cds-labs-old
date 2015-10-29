@@ -10,8 +10,9 @@ title: Code Snippets
     <div class="col-md-6 repo">
       <div class="row title">
         <div class="col-md-12">
-          <h2><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
-          <script src="{{ repo.giturl }}.js"></script>
+          <h3><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h3>
+          <p class="description">{{ repo.description }}</p>
+          <div class="gistpreview"><script src="{{ repo.giturl }}.js"></script></div>
         </div>
       </div>
 
@@ -34,7 +35,7 @@ title: Code Snippets
               Tech:
             </div>
             <div class="col-md-9">
-              {% for tech in repo.tech %}<span class="tech">{{tech}}</span>{% endfor %}
+              {% for tech in repo.tech %}<button class="tech">{{tech}}</button>{% endfor %}
             </div>
           </div>
           <div class="row levels">
@@ -42,7 +43,7 @@ title: Code Snippets
               Level:
             </div>
             <div class="col-md-9">
-              <span class="level">{{ repo.level }}</span>
+              <button class="level">{{ repo.level }}</button>
             </div>
           </div>
         </div>
