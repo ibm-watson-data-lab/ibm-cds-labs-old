@@ -1,4 +1,4 @@
-$(document).on('ready',function() {
+$(document).on('ready', function() {
 
   // Place holder
   var languages = [];
@@ -9,8 +9,8 @@ $(document).on('ready',function() {
     var classes = $(value).attr('class').split(' ');
     for (var i = 0; i < classes.length; i++) {
       // Add languages
-      if (classes[i].indexOf('lang-') > -1) {
-        var language = classes[i].substr(5);
+      if (classes[i].indexOf('language-') > -1) {
+        var language = classes[i].substr(9);
         if (languages.indexOf(language) < 0) {
           languages.push(language);
         }
@@ -27,28 +27,35 @@ $(document).on('ready',function() {
   });
 
   for (var i = 0; i < languages.length; i++) {
-    $('.faceted-languages').append('<span class=\"language\">' + languages[i] + '</span>');
+    $('.faceted-languages').append('<button class=\"language\"><span class=\"data\" >' + languages[i] + '</span> <i class="fa fa-square-o" ></i></button>');
   }
 
   for (var i = 0; i < technologies.length; i++) {
-    $('.faceted-technologies').append('<span class=\"tech\">' + technologies[i] + '</span>');
+    $('.faceted-technologies').append('<button class=\"tech\"><span class=\"data\" >' + technologies[i] + '</span> <i class="fa fa-square-o" ></i></button>');
   }
 
   // Click event
-  $('.faceted-languages .language').on('click', function(e) {
+  $('.faceted-languages .language, .faceted-technologies .tech').on('click', function(e) {
 
-    var language = $(this).html();
+    var checkbox = $(this).children('i.fa');
+    if (checkbox.hasClass('fa-square-o')) {
+      checkbox.removeClass('fa-square-o');
+      checkbox.addClass('fa-check-square-o');
+    } else {
+      checkbox.addClass('fa-square-o');
+      checkbox.removeClass('fa-check-square-o');
+    }
+
     $('.repo').addClass('hide');
-    $('.repo.lang-' + language).removeClass('hide');
 
-    e.preventDefault();
-  });
+    if ($('i.fa.fa-check-square-o').length == 0) {
+      $('.repo').removeClass('hide');
+    }
 
-  $('.faceted-technologies .tech').on('click', function(e) {
-
-    var technology = $(this).html();
-    $('.repo').addClass('hide');
-    $('.repo.tech-' + technology).removeClass('hide');
+    $('i.fa.fa-check-square-o').each(function(key, value) {
+      var container = $(value).parent();
+      $('.repo.' + container.attr('class') + '-' + container.children('span.data').html()).removeClass('hide');
+    });
 
     e.preventDefault();
   });

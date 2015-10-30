@@ -7,7 +7,7 @@ title: Featured GitHub Projects
   {% if loopindex == 1 %}
     <div class="row">
   {% endif %}
-    <div class="col-md-6 repo{% for lang in repo.languages %} lang-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
+    <div class="col-md-6 repo{% for lang in repo.languages %} language-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
       <div class="row title">
         <div class="col-md-12">
           <h2><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
