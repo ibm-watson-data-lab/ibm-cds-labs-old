@@ -1,4 +1,4 @@
-/* @override
+/* @override 
 	http://127.0.0.1:4000/css/app.css
 	http://0.0.0.0:4000/css/app.css
 */
@@ -43,7 +43,11 @@
   color: #008f51;
   border-color: #008f51;
 }
-
+.facet-title {
+  font-weight: 700;
+  color: #888;
+  font-variant: small-caps;
+}
 
 #hero {
   color: white;
