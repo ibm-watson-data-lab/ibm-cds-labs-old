@@ -8,7 +8,7 @@
   background-color: #f2f2f2;
   border-left: 8px solid #f16a54;
   border-right: 24px solid #fff;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   /*height: 296px;*/
 }
 .description {
@@ -47,6 +47,9 @@
   font-weight: 700;
   color: #888;
   font-variant: small-caps;
+}
+#facets {
+  margin-bottom: 24px;
 }
 
 #hero {
