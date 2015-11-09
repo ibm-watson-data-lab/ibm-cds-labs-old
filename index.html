@@ -3,64 +3,57 @@ layout: default
 title: Featured GitHub Projects
 ---
 {% for repo in site.selectedrepos %}
-  {% assign loopindex = forloop.index | modulo: 2 %}
-  {% if loopindex == 1 %}
-    <div class="row">
-  {% endif %}
-    <div class="col-md-6 repo{% for lang in repo.languages %} language-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
-      <div class="row title">
-        <div class="col-md-12">
-          <h2><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
-          <p class="description">{{ repo.description }}</p>
-        </div>
-      </div>
-
-      <div class="row meta">
-        <div id="githubmeta" class="col-md-4">
-          <p class="stars">
-            <i class="fa fa-star-o"></i>
-            Stars: <span class="githubmetaval">{{ repo.stars }}</span>
-          </p>
-          <p class="forks">
-            <i class="fa fa-code-fork"></i>
-            Forks: <span class="githubmetaval">{{ repo.forks }}</span>
-          </p>
-          <p class="watchers">
-            <i class="fa fa-eye"></i>
-            Watchers: <span class="githubmetaval">{{ repo.watchers }}</span>
-          </p>
+      <div class="col-md-5 col-md-offset-1 repo{% for lang in repo.languages %} language-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
+            <p class="description">{{ repo.description }}</p>
+          </div>
         </div>
 
-        <!-- CDS metadata -->
-        <div class="col-md-8 cdsmeta">
-          <div class="row techs">
-            <div class="col-md-3">
-              Tech:
-            </div>
-            <div class="col-md-9">
-              {% for tech in repo.tech %}<button class="tech">{{tech}}</button>{% endfor %}
-            </div>
+        <div class="row meta">
+          <div id="githubmeta" class="col-md-4">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+              Stars: <span class="githubmetaval">{{ repo.stars }}</span>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+              Forks: <span class="githubmetaval">{{ repo.forks }}</span>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+              Watchers: <span class="githubmetaval">{{ repo.watchers }}</span>
+            </p>
           </div>
-          <div class="row languages">
-            <div class="col-md-3">
-              Languages:
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                {% for tech in repo.tech %}<button class="tech">{{tech}}</button>{% endfor %}
+              </div>
             </div>
-            <div class="col-md-9">
-              {% for lang in repo.languages %}<button class="language">{{lang}}</button>{% endfor %}
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                {% for lang in repo.languages %}<button class="language">{{lang}}</button>{% endfor %}
+              </div>
             </div>
-          </div>
-          <div class="row levels">
-            <div class="col-md-3">
-              Level:
-            </div>
-            <div class="col-md-9">
-              <button class="level">{{ repo.level }}</button>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <button class="level">{{ repo.level }}</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  {% if loopindex == 0 %}
-    </div>
-  {% endif %}
 {% endfor %}

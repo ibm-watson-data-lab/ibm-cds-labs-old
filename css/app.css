@@ -1,4 +1,4 @@
-/* @override
+/* @override 
 	http://127.0.0.1:4000/css/app.css
 	http://0.0.0.0:4000/css/app.css
 */
@@ -8,7 +8,7 @@
   background-color: #f2f2f2;
   border-left: 8px solid #f16a54;
   border-right: 24px solid #fff;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   /*height: 296px;*/
 }
 .description {
@@ -43,7 +43,14 @@
   color: #008f51;
   border-color: #008f51;
 }
-
+.facet-title {
+  font-weight: 700;
+  color: #888;
+  font-variant: small-caps;
+}
+#facets {
+  margin-bottom: 24px;
+}
 
 #hero {
   color: white;
@@ -58,8 +65,8 @@
   margin-bottom: 24px;
 }
 #hero-text {
-  position: relative;
-  top: 48px;
+  position: absolute;
+  top: 28px;
   left: 30px;
 }
 #hero-company {
