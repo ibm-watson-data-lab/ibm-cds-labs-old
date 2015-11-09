@@ -65,8 +65,8 @@
   margin-bottom: 24px;
 }
 #hero-text {
-  position: relative;
-  top: 48px;
+  position: absolute;
+  top: 28px;
   left: 30px;
 }
 #hero-company {
