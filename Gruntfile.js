@@ -235,7 +235,7 @@ module.exports = function(grunt) {
     http: {
       repos: {
         options: {
-          url: 'https://3885a4a7-634c-4ade-83fe-966ea8a8d8c7-bluemix.cloudant.com/devcenter/_design/github/_view/github?reduce=false&include_docs=true',
+          url: 'https://d14f43e9-5102-45bc-b394-c92520c2c0bd-bluemix.cloudant.com/devcenter/_design/github/_view/github?reduce=false&include_docs=true',
         },
         dest: 'github-repos.json',
       },

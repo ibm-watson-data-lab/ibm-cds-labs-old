@@ -29,3 +29,26 @@ Build without gists `grunt buildNoGist`
 To review locally you need to `grunt serve`
 
 And to deploy to GitHub Pages `grunt deploy`
+
+
+## Developer Details
+
+This view must exist in the Cloudant database. The grunt build jobs query the view to compile the list of repos and gists to publish using this query: 
+
+> https://d14f43e9-5102-45bc-b394-c92520c2c0bd-bluemix.cloudant.com/devcenter/_design/github/_view/github?reduce=false&include_docs=true
+
+```
+{
+  "_id": "_design/github",
+  "views": {
+    "github": {
+      "map": "function (doc) {
+        if ( doc.url.indexOf('github.com')>0 && doc.status=='Live') {
+          emit(doc._id, 1);
+        }
+      }"
+    }
+  }
+}
+
+```
