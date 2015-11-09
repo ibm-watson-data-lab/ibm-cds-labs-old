@@ -52,3 +52,13 @@ This view must exist in the Cloudant database. The grunt build jobs query the vi
 }
 
 ```
+
+## Publishing
+
+1. Update documents in http://devcenter.mybluemix.net/
+  - all documents that have github.com or gist.github.com in the `url` field will be considered
+  - also, status=Live and featured=true must be set
+
+2. Notify this site administrator that new content exists
+3. Administrator will re-harvest from /devcenter and publish
+  
