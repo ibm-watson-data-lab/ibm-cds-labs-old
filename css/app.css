@@ -88,3 +88,9 @@
   overflow: scroll;
   box-shadow: inset
 }
+
+.navitem {
+  font-size: 0.75em;
+  color: #aaa;
+  padding-right: 12px;
+}
