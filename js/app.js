@@ -27,11 +27,21 @@ $(document).on('ready', function() {
   });
 
   for (var i = 0; i < languages.length; i++) {
-    $('.faceted-languages').append('<button class=\"language\"><span class=\"data\" >' + languages[i] + '</span> <i class="fa fa-square-o" ></i></button>');
+    var langwidget = '<button class=\"language\"';
+    langwidget += ' onclick="javascript:_paq.push([\'trackEvent\', \'Language\', \'' + languages[i] + '\']);"';
+    langwidget += '>';
+    langwidget += '<span class=\"data\" >' + languages[i] + '</span>';
+    langwidget += '<i class="fa fa-square-o"></i></button>';
+    $('.faceted-languages').append(langwidget);
   }
 
   for (var i = 0; i < technologies.length; i++) {
-    $('.faceted-technologies').append('<button class=\"tech\"><span class=\"data\" >' + technologies[i] + '</span> <i class="fa fa-square-o" ></i></button>');
+    var techwidget = '<button class=\"tech\"';
+    techwidget += ' onclick="javascript:_paq.push([\'trackEvent\', \'Technology\', \'' + technologies[i] + '\']);"';
+    techwidget += '>';
+    techwidget += '<span class=\"data\" >' + technologies[i] + '</span>';
+    techwidget += '<i class="fa fa-square-o"></i></button>';
+    $('.faceted-technologies').append(techwidget);
   }
 
   // Click event
