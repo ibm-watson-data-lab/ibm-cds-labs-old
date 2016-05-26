@@ -27,18 +27,14 @@ $(document).on('ready', function() {
   });
 
   for (var i = 0; i < languages.length; i++) {
-    var langwidget = '<button class=\"language\"';
-    langwidget += ' onclick="javascript:_paq.push([\'trackEvent\', \'Language\', \'' + languages[i] + '\']);"';
-    langwidget += '>';
+    var langwidget = '<button class=\"language\">';
     langwidget += '<span class=\"data\" >' + languages[i] + '</span>';
     langwidget += '<i class="fa fa-square-o"></i></button>';
     $('.faceted-languages').append(langwidget);
   }
 
   for (var i = 0; i < technologies.length; i++) {
-    var techwidget = '<button class=\"tech\"';
-    techwidget += ' onclick="javascript:_paq.push([\'trackEvent\', \'Technology\', \'' + technologies[i] + '\']);"';
-    techwidget += '>';
+    var techwidget = '<button class=\"tech\">';
     techwidget += '<span class=\"data\" >' + technologies[i] + '</span>';
     techwidget += '<i class="fa fa-square-o"></i></button>';
     $('.faceted-technologies').append(techwidget);
@@ -67,7 +63,24 @@ $(document).on('ready', function() {
       $('.repo.' + container.attr('class') + '-' + container.children('span.data').html()).removeClass('hide');
     });
 
+    trackClick();
     e.preventDefault();
   });
 
 });
+
+function trackClick() {
+  var chk = '';
+  $('button.tech').each(function() {
+    if ( $(this).children('i.fa').first().hasClass('fa-check-square-o') ) {
+      chk += 'tech-' + $(this).children('span').first().text() + ',';
+    }
+  });
+  $('button.language').each(function() {
+    if ( $(this).children('i.fa').first().hasClass('fa-check-square-o') ) {
+      chk += 'language-' + $(this).children('span').first().text() + ',';
+    }
+  });
+  chk = chk.substr(0, chk.length-1);
+  _paq.push(['trackEvent', 'Facets', chk]);
+}
