@@ -31,6 +31,9 @@
   background-color: transparent;
 }
 
+button.tech i, button.language i {
+  padding-left: 4px;
+}
 .tech {
   color: #0096ff;
   border-color: #0096ff;

@@ -28,7 +28,10 @@ Build without gists `grunt buildNoGist`
 
 To review locally you need to `grunt serve`
 
-And to deploy to GitHub Pages `grunt deploy`
+And to deploy to GitHub Pages:
+- `git commit -a -m "updates"`
+- `git push`
+- `grunt deploy`
 
 
 ## Developer Details
