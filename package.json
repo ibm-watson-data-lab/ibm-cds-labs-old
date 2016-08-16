@@ -22,7 +22,7 @@
     "request": "^2.61.0"
   },
   "scripts": {
-    "postinstall": "bower install && bundle install", 
+    // "postinstall": "bower install && bundle install", 
     "update": "grunt build"
   }
 }
