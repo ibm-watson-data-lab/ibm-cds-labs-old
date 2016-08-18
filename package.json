@@ -1,5 +1,6 @@
 {
   "name": "ibm-cds-labs-github-io",
+  "repository": "https://github.com/ibm-cds-labs/ibm-cds-labs.github.io",
   "version": "0.0.0",
   "author": "Mike Elsmore <mike.elsmore@uk.ibm.com",
   "homepage": "http://ibm-cds-labs.github.io",

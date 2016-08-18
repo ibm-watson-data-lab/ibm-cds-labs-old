@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - "0.10"
+rvm:
+  - 2.0.0
 before_install:
   - npm install grunt-cli -g
   - gem update --system 2.0.0
