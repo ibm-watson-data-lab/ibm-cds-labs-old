@@ -10,4 +10,6 @@ before_script:
   - npm install grunt-cli -g
 script: 
   - grunt build
+  - git commit -a -m "content updates"
+  - git push
   - grunt deploy
