@@ -22,7 +22,6 @@
     "request": "^2.61.0"
   },
   "scripts": {
-    "postinstall": "bundle install", 
     "update": "grunt build"
   }
 }
