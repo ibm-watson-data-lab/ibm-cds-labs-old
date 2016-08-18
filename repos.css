@@ -20,7 +20,7 @@
     margin: 0 12px 0 0;
     border-bottom: 2px dotted #929292;
     height: 58px;
-    overflow: scroll;
+    overflow: hidden;
     font-size: 18pt;
 }
 
@@ -47,7 +47,7 @@
     color: #DD2880;
     font-weight: 400;
     padding: 12px 12px 4px 12px;
-    height: 178px;
+    height: 158px;
     display: block;
     overflow: scroll;
 }
