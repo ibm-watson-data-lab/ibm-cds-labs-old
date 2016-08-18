@@ -3,6 +3,7 @@ node_js:
   - "0.10"
 rvm:
   - "2.0.0"
+install: npm install
 before_script:
   - npm install grunt-cli -g
-install: npm install
+script: grunt build
