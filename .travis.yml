@@ -8,4 +8,6 @@ before_install:
 install: npm install
 before_script:
   - npm install grunt-cli -g
-script: grunt build
+script: 
+  - grunt build
+  - grunt deploy
