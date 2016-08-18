@@ -10,6 +10,5 @@ before_script:
   - npm install grunt-cli -g
 script: 
   - grunt build
-  - git commit -a -m "content updates"
-  - git push
-  - grunt deploy
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
