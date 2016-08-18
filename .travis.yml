@@ -3,6 +3,8 @@ node_js:
   - "0.10"
 before_install:
   - npm install grunt-cli -g
+  - gem update --system 2.0.0
+  - gem --version 
 before_script:
   - npm install grunt-cli -g
 install: npm install
