@@ -11,7 +11,6 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-jshint": "~0.7.2",
-    "grunt-contrib-qunit": "*",
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-http": "^1.6.0",
@@ -22,7 +21,7 @@
     "request": "^2.61.0"
   },
   "scripts": {
-    // "postinstall": "bower install && bundle install", 
+    "postinstall": "bower install && bundle install", 
     "update": "grunt build"
   }
 }
