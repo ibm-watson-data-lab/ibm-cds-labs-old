@@ -1,0 +1,88 @@
+.repo {
+    border-left: 12px solid #182C3B;
+    height: 324px;
+    width: 512px;
+    margin: 0px 24px 36px 0px;
+    /*over-rides*/
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.reponame, .repodetails {
+    color: #fff;
+    background-color: #182c3b;
+    font-weight: 600;
+    padding-left: 12px;
+}
+
+.reponamerow {
+    padding: 10px 0 6px 0;
+    margin: 0 12px 0 0;
+    border-bottom: 2px dotted #929292;
+    height: 58px;
+    overflow: hidden;
+    font-size: 18pt;
+}
+
+.repodetails {
+    font-size: 10pt;
+    font-weight: 300;
+    padding: 12px 0 0 12px;
+}
+
+.repodetailsheaders {
+    font-size: 8pt;
+}
+.repodetailsnumbers {
+    padding: 0 0 6px 0;
+}
+
+.description {
+    background-color: #929292;
+    padding: 0 0 12px 0;
+}
+.descriptiontext {
+    font-size: 10pt;
+    background-color: #fff;
+    color: #DD2880;
+    font-weight: 400;
+    padding: 12px 12px 4px 12px;
+    height: 158px;
+    display: block;
+    overflow: scroll;
+}
+.descriptioncontrols {
+    padding: 0 0 0 12px;
+}
+.descriptioncontrols a {
+    color: #182C3B;
+    background-color: #37D7C3;
+}
+
+.facets {
+    font-size: 12pt;
+}
+.facet {
+    display: flex;
+    flex-direction: column;
+    /*font-weight: 200;*/
+    padding: 0 12px 0 0;
+}
+.facet .label {
+    margin-bottom: 4px;
+    font-weight: 200;
+    padding: 4px;
+}
+.facet .facet-technology {
+    background-color: #56A8FD;
+}
+.facet .facet-language {
+    background-color: #37D7C3;
+}
+.facet .facet-level {
+    background-color: #929292;
+}
+
+.techlabel > input, .langlabel > input {
+    margin: 0 3px 0 12px;
+}
