@@ -3,26 +3,37 @@ layout: default
 title: Featured GitHub Projects
 ---
 {% for repo in site.selectedrepos %}
-      <div class="col-md-5 col-md-offset-1 repo{% for lang in repo.languages %} language-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo{% for lang in repo.languages %} language-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
         <div class="row title">
           <div class="col-md-12">
-            <h2><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
+            <h2 class="repotitle"><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
             <p class="description">{{ repo.description }}</p>
           </div>
         </div>
 
         <div class="row meta">
-          <div id="githubmeta" class="col-md-4">
+
+          <div id="githubicons" class="col-md-1">
             <p class="stars">
               <i class="fa fa-star-o"></i>
-              Stars: <span class="githubmetaval">{{ repo.stars }}</span>
             </p>
             <p class="forks">
               <i class="fa fa-code-fork"></i>
-              Forks: <span class="githubmetaval">{{ repo.forks }}</span>
             </p>
             <p class="watchers">
               <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">{{ repo.stars }}</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">{{ repo.forks }}</span>
+            </p>
+            <p class="watchers">
               Watchers: <span class="githubmetaval">{{ repo.watchers }}</span>
             </p>
           </div>
@@ -34,7 +45,7 @@ title: Featured GitHub Projects
                 Tech:
               </div>
               <div class="col-md-9">
-                {% for tech in repo.tech %}<button class="tech">{{tech}}</button>{% endfor %}
+                {% for tech in repo.tech %}<span class="label tech">{{tech}}</span>{% endfor %}
               </div>
             </div>
             <div class="row languages">
@@ -42,7 +53,7 @@ title: Featured GitHub Projects
                 Languages:
               </div>
               <div class="col-md-9">
-                {% for lang in repo.languages %}<button class="language">{{lang}}</button>{% endfor %}
+                {% for lang in repo.languages %}<span class="label language">{{lang}}</span>{% endfor %}
               </div>
             </div>
             <div class="row levels">
@@ -50,10 +61,11 @@ title: Featured GitHub Projects
                 Level:
               </div>
               <div class="col-md-9">
-                <button class="level">{{ repo.level }}</button>
+                <span class="label level">{{ repo.level }}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+  </div>
 {% endfor %}

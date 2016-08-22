@@ -10,7 +10,7 @@ title: Code Snippets
     <div class="col-md-6 repo{% for lang in repo.languages %} language-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
       <div class="row title">
         <div class="col-md-12">
-          <h3><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h3>
+          <h2><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
           <p class="description">{{ repo.description }}</p>
           <div class="gistpreview"><script src="{{ repo.giturl }}.js"></script></div>
         </div>
