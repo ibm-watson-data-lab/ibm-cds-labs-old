@@ -4,47 +4,55 @@
 */
 
 .repo {
-  color:  #333;
-  background-color: #f2f2f2;
-  border-left: 8px solid #f16a54;
+  color:  #182c3b;
+  background-color: #929292;
+  border-left: 8px solid #182c3b;
   border-right: 24px solid #fff;
-  margin-bottom: 12px;
+  margin-bottom: 48px;
+  font-size: 10pt;
   /*height: 296px;*/
+}
+.repotitle {
+  border-bottom: 2px dotted #fff;
+}
+.repotitle a, h2 a {
+  color: #fff;
 }
 .description {
   height: 38px;
   overflow: hidden;
 }
 .meta {
-  color: #aaa;
+  color: #fff;
+  font-weight: 300;
 }
 .meta .githubmetaval {
-  color: #333;
+  font-weight: 500;
+}
+#githubicons {
+  padding-right: 4px !important;
+}
+#githubmeta {
+  padding-left: 0px !important;
 }
 .techs, .languages, .levels {
   margin-bottom: 0.5em;
 }
 .tech, .language, .level {
   margin-right: 4px;
-  font-size: 0.75em;
-  border: 1px solid #333;
-  background-color: transparent;
+  font-size: 8pt !important;
+  border: 0px;
+  font-weight: 300 !important;
 }
 
-button.tech i, button.language i {
-  padding-left: 4px;
-}
 .tech {
-  color: #0096ff;
-  border-color: #0096ff;
+  background-color: #56A8FD;
 }
 .language {
-  color: red;
-  border-color: red;
+  background-color: #37D7C3;
 }
 .level {
-  color: #008f51;
-  border-color: #008f51;
+  background-color: #182c3b;
 }
 .facet-title {
   font-weight: 700;
@@ -54,10 +62,18 @@ button.tech i, button.language i {
 #facets {
   margin-bottom: 24px;
 }
+#facets button {
+  padding: 2px 4px 2px 4px;
+}
+#facets button .data {
+  padding-right: 4px;
+  font-size: 9pt;
+}
 
 #hero {
   color: white;
-  background: #231f20 url('/img/IBMCodeLabs_header.png') no-repeat;
+  background: url('https://developer.ibm.com/clouddataservices2/wp-content/themes/devadvocacy/library/images/home-hero.png');
+  /*background: #231f20 url('/img/IBMCodeLabs_header.png') no-repeat;*/
   background-position: center;
   background-size: cover;
   border: none;
@@ -70,10 +86,7 @@ button.tech i, button.language i {
 #hero-text {
   position: absolute;
   top: 28px;
-  left: 30px;
-}
-#hero-company {
-  color: #06a0d3;
+  left: 48px;
 }
 #hero-org {
   font-weight: 600;
@@ -83,7 +96,9 @@ button.tech i, button.language i {
   /*color: #ddd;*/
   margin-top: 0.15em;
 }
-
+.navitem a {
+  color: #37D7C3;
+}
 .gistpreview {
   max-height: 256px;
   margin-bottom: 8px;

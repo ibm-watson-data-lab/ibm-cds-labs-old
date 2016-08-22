@@ -27,14 +27,14 @@ $(document).on('ready', function() {
   });
 
   for (var i = 0; i < languages.length; i++) {
-    var langwidget = '<button class=\"language\">';
+    var langwidget = '<button class=\"btn language\">';
     langwidget += '<span class=\"data\" >' + languages[i] + '</span>';
     langwidget += '<i class="fa fa-square-o"></i></button>';
     $('.faceted-languages').append(langwidget);
   }
 
   for (var i = 0; i < technologies.length; i++) {
-    var techwidget = '<button class=\"tech\">';
+    var techwidget = '<button class=\"btn tech\">';
     techwidget += '<span class=\"data\" >' + technologies[i] + '</span>';
     techwidget += '<i class="fa fa-square-o"></i></button>';
     $('.faceted-technologies').append(techwidget);
@@ -60,7 +60,8 @@ $(document).on('ready', function() {
 
     $('i.fa.fa-check-square-o').each(function(key, value) {
       var container = $(value).parent();
-      $('.repo.' + container.attr('class') + '-' + container.children('span.data').html()).removeClass('hide');
+      var word = container.attr('class').substr(4);
+      $('.repo.' + word + '-' + container.children('span.data').html()).removeClass('hide');
     });
 
     trackClick();
