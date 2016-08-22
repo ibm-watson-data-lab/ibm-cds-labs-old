@@ -45,9 +45,6 @@
   font-weight: 300 !important;
 }
 
-button.tech i, button.language i {
-  padding-left: 4px;
-}
 .tech {
   background-color: #56A8FD;
 }

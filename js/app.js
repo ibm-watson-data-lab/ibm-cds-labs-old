@@ -27,22 +27,14 @@ $(document).on('ready', function() {
   });
 
   for (var i = 0; i < languages.length; i++) {
-<<<<<<< HEAD
-    var langwidget = '<button class=\"language\">';
-=======
     var langwidget = '<button class=\"btn language\">';
->>>>>>> gh-pages
     langwidget += '<span class=\"data\" >' + languages[i] + '</span>';
     langwidget += '<i class="fa fa-square-o"></i></button>';
     $('.faceted-languages').append(langwidget);
   }
 
   for (var i = 0; i < technologies.length; i++) {
-<<<<<<< HEAD
-    var techwidget = '<button class=\"tech\">';
-=======
     var techwidget = '<button class=\"btn tech\">';
->>>>>>> gh-pages
     techwidget += '<span class=\"data\" >' + technologies[i] + '</span>';
     techwidget += '<i class="fa fa-square-o"></i></button>';
     $('.faceted-technologies').append(techwidget);
