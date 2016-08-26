@@ -33,17 +33,15 @@
 #githubicons {
   padding-right: 4px !important;
 }
-#githubmeta {
-  padding-left: 0px !important;
-}
 .techs, .languages, .levels {
   margin-bottom: 0.5em;
 }
 .tech, .language, .level {
   margin-right: 4px;
-  font-size: 8pt !important;
+  font-size: 9pt !important;
   border: 0px;
-  font-weight: 300 !important;
+  font-weight: 500 !important;
+  border-radius: 4px;
 }
 
 .tech {
