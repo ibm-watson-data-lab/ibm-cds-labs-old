@@ -4,16 +4,17 @@
 */
 
 .repo {
-  color:  #182c3b;
-  background-color: #929292;
-  border-left: 8px solid #182c3b;
+  color: #FFF;
+  background-color: #004961;
+  border-left: 8px solid #37D7C3;
   border-right: 24px solid #fff;
   margin-bottom: 48px;
-  font-size: 10pt;
+  font-size: 12pt;
   /*height: 296px;*/
 }
 .repotitle {
   border-bottom: 2px dotted #fff;
+  line-height: 130%;
 }
 .repotitle a, h2 a {
   color: #fff;
@@ -77,11 +78,10 @@
   background-position: center;
   background-size: cover;
   border: none;
+  font-size: 14pt;
   height: 180px;
   margin-top: -20px;
-  font-size: 14pt;
-  border-bottom: 24px solid #555;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
 }
 #hero-text {
   position: absolute;
@@ -89,15 +89,16 @@
   left: 48px;
 }
 #hero-org {
-  font-weight: 600;
+  font-weight: 500;
 }
 #hero-title {
   font-size: 2em;
   /*color: #ddd;*/
   margin-top: 0.15em;
 }
-.navitem a {
+.navitem a:hover, .hl, .repotitle a:hover {
   color: #37D7C3;
+  text-decoration: none;
 }
 .gistpreview {
   max-height: 256px;
@@ -111,4 +112,31 @@
   font-size: 0.75em;
   color: #aaa;
   padding-right: 12px;
+}
+
+#preface h1 {
+  font-size: 48px;
+  line-height: 60px;
+  max-width: 900px;
+  color: #004961;
+  font-weight: 600;
+}
+
+.links-footer {
+  background-color: #004961;
+  padding: 12px 0 12px 0;
+  font-size: 10pt;
+}
+.links-footer ul, .links-footer ol {
+  list-style-type: none !important;
+}
+.links-footer li {
+  float: left;
+}
+.links-footer li a {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: .25em 1.1em 1em;
 }
