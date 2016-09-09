@@ -2,6 +2,13 @@
 layout: default
 title: Gists (Code Snippets)
 ---
+<div id="preface" class="row">
+  <div class="col-md-12">
+    <h1><span class="hl">Useful scripts</span> from the <span class="hl">developer advocacy</span> team at IBM Cloud Data Services. 
+    </h1>
+  </div>
+</div>
+
 {% for repo in site.selectedgists %}
   {% assign loopindex = forloop.index | modulo: 2 %}
   {% if loopindex == 1 %}

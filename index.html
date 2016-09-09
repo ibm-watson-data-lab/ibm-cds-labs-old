@@ -2,6 +2,13 @@
 layout: default
 title: Featured GitHub Projects
 ---
+<div id="preface" class="row">
+  <div class="col-md-12">
+    <h1><span class="hl">Open source</span> projects from the <span class="hl">developer advocacy</span> team at IBM Cloud Data Services. 
+    </h1>
+  </div>
+</div>
+
 {% for repo in site.selectedrepos %}
   <div class="row">
       <div class="col-md-7 col-sm-9 col-xs-11 repo{% for lang in repo.languages %} language-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
