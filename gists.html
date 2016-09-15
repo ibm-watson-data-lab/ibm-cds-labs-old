@@ -1,25 +1,75 @@
----
-layout: default
-title: Gists (Code Snippets)
----
-<div id="preface" class="row">
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>IBM Cloud Data Services Labs | Gists (Code Snippets)</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Style -->
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- JavaScript -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js" ></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script src="js/app.js" ></script>
+<script type="text/javascript" src="//ibm-cds-labs.github.io/dW/js/tracker.js" siteid="ibm.cds.labs" trackerurl="http://metrics-collector-ms.mybluemix.net/tracker"></script>
+  
+<!-- Shiv -->
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+
+<body>
+            <div id="hero">
+  <div id="hero-text">
+    <div>
+      <div>
+        <span id="hero-company">IBM</span>
+        <span id="hero-org">Cloud Data Services Labs</span>
+      </div>
+      <h1 id="hero-title">Gists (Code Snippets)</h1>
+      <div id="tiny-nav">
+        <span class="navitem"><a href="https://developer.ibm.com/clouddataservices/">Home</a></span>
+          <span class="navitem"><a href="/">Featured GitHub Projects</a></span>
+          <span class="navitem"><a href="https://github.com/ibm-cds-labs">All Repos</a></span>
+          <span class="navitem"><a href="/gists.html">Gists (Code Snippets)</a></span>
+          <span class="navitem"><a href="https://developer.ibm.com/clouddataservices/blog">Blog</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div id="content">
+    <div class="container">
+
+        <!--<div class="row" >
+          <div id="facets" class="col-md-10" >
+            <p class="faceted-technologies" ><span class="facet-title">Technology: </span></p>
+            <p class="faceted-languages"><span class="facet-title">Languages: &nbsp;&nbsp; </span></p>
+          </div>
+        </div>-->
+
+        <!--<div class="row" >-->
+            <div id="preface" class="row">
   <div class="col-md-12">
     <h1><span class="hl">Useful scripts</span> from the <span class="hl">developer advocacy</span> team at IBM Cloud Data Services. 
     </h1>
   </div>
 </div>
 
-{% for repo in site.selectedgists %}
-  {% assign loopindex = forloop.index | modulo: 2 %}
-  {% if loopindex == 1 %}
+
+  
+  
     <div class="row">
-  {% endif %}
-    <div class="col-md-12 repo{% for lang in repo.languages %} language-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
+  
+    <div class="col-md-12 repo tech-Cloudant">
       <div class="row title">
         <div class="col-md-12">
-          <h2><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
-          <p class="description">{{ repo.description }}</p>
-          <div class="gistpreview"><script src="{{ repo.giturl }}.js"></script></div>
+          <h2><a href="https://gist.github.com/rajrsingh/06720f82a5d3957c201ced84f8834b16" >geotest.js</a></h2>
+          <p class="description">A simple Node.js script to test Cloudant geo queries for load and/or coverage. `npm install superagent` then `node geotest.js`</p>
+          <div class="gistpreview"><script src="https://gist.github.com/rajrsingh/06720f82a5d3957c201ced84f8834b16.js"></script></div>
         </div>
       </div>
 
@@ -27,11 +77,11 @@ title: Gists (Code Snippets)
         <div id="githubmeta" class="col-md-4 col-sm-4">
           <p class="stars">
             <i class="fa fa-star-o"></i>
-            Stars: <span class="githubmetaval">{{ repo.stars }}</span>
+            Stars: <span class="githubmetaval"></span>
           </p>
           <p class="forks">
             <i class="fa fa-code-fork"></i>
-            Forks: <span class="githubmetaval">{{ repo.forks }}</span>
+            Forks: <span class="githubmetaval">0</span>
           </p>
         </div>
 
@@ -42,7 +92,7 @@ title: Gists (Code Snippets)
               Tech:
             </div>
             <div class="col-md-10">
-              {% for tech in repo.tech %}<button class="tech">{{tech}}</button>{% endfor %}
+              <button class="tech">Cloudant</button>
             </div>
           </div>
           <div class="row levels">
@@ -50,13 +100,79 @@ title: Gists (Code Snippets)
               Level:
             </div>
             <div class="col-md-10 col-sm-10">
-              <button class="level">{{ repo.level }}</button>
+              <button class="level">Beginner</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  {% if loopindex == 0 %}
+  
+
+  
+  
+    <div class="col-md-12 repo language-Python tech-Cloudant">
+      <div class="row title">
+        <div class="col-md-12">
+          <h2><a href="https://gist.github.com/rajrsingh/a0cf7afc4e1c901734580471b04c02e1" >updateprops.py</a></h2>
+          <p class="description">Loop through all docs in a Cloudant database and update data. This version changes string values to integers but it can easily be adapted for other uses.</p>
+          <div class="gistpreview"><script src="https://gist.github.com/rajrsingh/a0cf7afc4e1c901734580471b04c02e1.js"></script></div>
+        </div>
+      </div>
+
+      <div class="row meta">
+        <div id="githubmeta" class="col-md-4 col-sm-4">
+          <p class="stars">
+            <i class="fa fa-star-o"></i>
+            Stars: <span class="githubmetaval"></span>
+          </p>
+          <p class="forks">
+            <i class="fa fa-code-fork"></i>
+            Forks: <span class="githubmetaval">0</span>
+          </p>
+        </div>
+
+        <!-- CDS metadata -->
+        <div class="col-md-8 col-sm-8 cdsmeta">
+          <div class="row techs">
+            <div class="col-md-2">
+              Tech:
+            </div>
+            <div class="col-md-10">
+              <button class="tech">Cloudant</button>
+            </div>
+          </div>
+          <div class="row levels">
+            <div class="col-md-2 col-sm-2">
+              Level:
+            </div>
+            <div class="col-md-10 col-sm-10">
+              <button class="level">Beginner</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  {% endif %}
-{% endfor %}
+  
+    </div>
+  
+
+
+        <!--</div>-->
+
+      </div>
+    </div>
+
+  <div id="pnext-footer" class="row links-footer" aria-label="Page footer">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <!--<ul id="menu-footer" class="pn-footer-menu pn-il pn-il--center">
+            <li class="pn-footer-menu-item pn-il-item"><a href="http://www.ibm.com/privacy/">IBM Privacy</a></li>
+        </ul>-->
+    </div>
+    <div class="col-md-3 pull-right">
+        &nbsp;
+        <!--<a href="http://ibm.com"><img src="css/IBM-01.png" width="56"></a>-->
+    </div>
+</div>
+</body>
+</html>
