@@ -1,21 +1,71 @@
----
-layout: default
-title: Featured GitHub Projects
----
-<div id="preface" class="row">
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>IBM Cloud Data Services Labs | Featured GitHub Projects</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Style -->
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- JavaScript -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js" ></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script src="js/app.js" ></script>
+<script type="text/javascript" src="//ibm-cds-labs.github.io/dW/js/tracker.js" siteid="ibm.cds.labs" trackerurl="http://metrics-collector-ms.mybluemix.net/tracker"></script>
+  
+<!-- Shiv -->
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+
+<body>
+            <div id="hero">
+  <div id="hero-text">
+    <div>
+      <div>
+        <span id="hero-company">IBM</span>
+        <span id="hero-org">Cloud Data Services Labs</span>
+      </div>
+      <h1 id="hero-title">Featured GitHub Projects</h1>
+      <div id="tiny-nav">
+        <span class="navitem"><a href="https://developer.ibm.com/clouddataservices/">Home</a></span>
+          <span class="navitem"><a href="/">Featured GitHub Projects</a></span>
+          <span class="navitem"><a href="https://github.com/ibm-cds-labs">All Repos</a></span>
+          <span class="navitem"><a href="/gists.html">Gists (Code Snippets)</a></span>
+          <span class="navitem"><a href="https://developer.ibm.com/clouddataservices/blog">Blog</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div id="content">
+    <div class="container">
+
+        <!--<div class="row" >
+          <div id="facets" class="col-md-10" >
+            <p class="faceted-technologies" ><span class="facet-title">Technology: </span></p>
+            <p class="faceted-languages"><span class="facet-title">Languages: &nbsp;&nbsp; </span></p>
+          </div>
+        </div>-->
+
+        <!--<div class="row" >-->
+            <div id="preface" class="row">
   <div class="col-md-12">
     <h1><span class="hl">Open source</span> projects from the <span class="hl">developer advocacy</span> team at IBM Cloud Data Services. 
     </h1>
   </div>
 </div>
 
-{% for repo in site.selectedrepos %}
+
   <div class="row">
-      <div class="col-md-7 col-sm-9 col-xs-11 repo{% for lang in repo.languages %} language-{{lang}}{% endfor %}{% for tech in repo.tech %} tech-{{tech}}{% endfor %}">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript tech-Cloudant tech-CouchDB">
         <div class="row title">
           <div class="col-md-12">
-            <h2 class="repotitle"><a href="{{ repo.giturl }}" >{{ repo.name }}</a></h2>
-            <p class="description">{{ repo.description }}</p>
+            <h2 class="repotitle"><a href="https://github.com/glynnbird/couchimport" >couchimport</a></h2>
+            <p class="description">CouchDB import tool to allow data to be bulk inserted</p>
           </div>
         </div>
 
@@ -35,13 +85,13 @@ title: Featured GitHub Projects
 
           <div id="githubmeta" class="col-md-3">
             <p class="stars">
-              Stars: <span class="githubmetaval">{{ repo.stars }}</span>
+              Stars: <span class="githubmetaval">55</span>
             </p>
             <p class="forks">
-              Forks: &nbsp;<span class="githubmetaval">{{ repo.forks }}</span>
+              Forks: &nbsp;<span class="githubmetaval">14</span>
             </p>
             <p class="watchers">
-              Watchers: <span class="githubmetaval">{{ repo.watchers }}</span>
+              Watchers: <span class="githubmetaval">55</span>
             </p>
           </div>
 
@@ -52,7 +102,7 @@ title: Featured GitHub Projects
                 Tech:
               </div>
               <div class="col-md-9">
-                {% for tech in repo.tech %}<span class="label tech">{{tech}}</span> {% endfor %}
+                <span class="label tech">Cloudant</span> <span class="label tech">CouchDB</span> 
               </div>
             </div>
             <div class="row languages">
@@ -60,7 +110,7 @@ title: Featured GitHub Projects
                 Languages:
               </div>
               <div class="col-md-9">
-                {% for lang in repo.languages %}<span class="label language">{{lang}}</span> {% endfor %}
+                <span class="label language">JavaScript</span> 
               </div>
             </div>
             <div class="row levels">
@@ -68,11 +118,1351 @@ title: Featured GitHub Projects
                 Level:
               </div>
               <div class="col-md-9">
-                <span class="label level">{{ repo.level }}</span>
+                <span class="label level">Intermediate</span>
               </div>
             </div>
           </div>
         </div>
       </div>
   </div>
-{% endfor %}
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript language-CSS tech-Cloudant">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/cloudant/nodejs-cloudant" >nodejs-cloudant</a></h2>
+            <p class="description">Cloudant Node.js client library</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">122</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">40</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">122</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Cloudant</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> <span class="label language">CSS</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-Java language-HTML language-JavaScript tech-Cloudant">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/cloudant/java-cloudant" >java-cloudant</a></h2>
+            <p class="description">A Java client for Cloudant</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">33</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">33</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">33</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Cloudant</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">Java</span> <span class="label language">HTML</span> <span class="label language">JavaScript</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-HTML language-Jupyter Notebook language-Python language-Scala tech-Cloudant tech-Spark">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/cloudant-labs/spark-cloudant/" >spark-cloudant</a></h2>
+            <p class="description">Cloudant integration with Spark as Spark SQL external datasource</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">12</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">18</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">12</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Cloudant</span> <span class="label tech">Spark</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">HTML</span> <span class="label language">Jupyter Notebook</span> <span class="label language">Python</span> <span class="label language">Scala</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo tech-Bluemix tech-CouchDB tech-Secure Gateway">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/hybrid-cloud-tutorial/blob/master/tutorial/tutorial.md" >hybrid-cloud-tutorial</a></h2>
+            <p class="description">Unlock your data for use in the cloud. Bluemix Secure Gateway service lets you move data from a local on-premises source out to the cloud in a secure manner. This is a multi-part tutorial which shows you how to set up a gateway and then build an app that uses the connection.</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">2</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">0</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">2</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> <span class="label tech">CouchDB</span> <span class="label tech">Secure Gateway</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript tech-Graph Data Store">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/nodejs-graph" >nodejs-graph</a></h2>
+            <p class="description">A shallow wrapper for IBM Graph</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">3</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">4</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">3</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Graph Data Store</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">undefined</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript tech-Cloudant tech-CouchDB">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/cloudant/meteor-couchdb" >meteor-couchdb</a></h2>
+            <p class="description">Meteor database driver for CouchDB and Cloudant</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">43</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">2</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">43</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Cloudant</span> <span class="label tech">CouchDB</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript language-HTML language-CSS tech-Bluemix tech-Cloudant tech-Compose tech-Redis">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/simple-search-service" >simple-search-service</a></h2>
+            <p class="description">A faceted search engine and content API.</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">12</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">8</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">12</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> <span class="label tech">Cloudant</span> <span class="label tech">Compose</span> <span class="label tech">Redis</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> <span class="label language">HTML</span> <span class="label language">CSS</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">undefined</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript tech-Bluemix">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/bluemix-helper-config" >bluemix-helper-config</a></h2>
+            <p class="description">Bluemix Helper for managing config</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">0</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">0</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">0</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Beginner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript tech-Bluemix">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/bluemix-helper-sso" >bluemix-helper-sso</a></h2>
+            <p class="description">Bluemix Helper for adding support for Single Sign On service to your application</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">5</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">1</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">5</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript language-HTML language-CSS tech-Bluemix tech-Cloudant">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/fieldwork" >fieldwork</a></h2>
+            <p class="description">Sample app demonstrating offline synchronization of geospatial data, spatial editing and mapping with Cloudant</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">7</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">3</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">7</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> <span class="label tech">Cloudant</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> <span class="label language">HTML</span> <span class="label language">CSS</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Beginner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-Jupyter Notebook language-Scala language-Java language-Python tech-Jupyter tech-Spark">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/spark.samples" >spark.samples</a></h2>
+            <p class="description">tutorials and samples that show you how get the most out of IBM Analytics for Apache Spark</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">33</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">43</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">33</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Jupyter</span> <span class="label tech">Spark</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">Jupyter Notebook</span> <span class="label language">Scala</span> <span class="label language">Java</span> <span class="label language">Python</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript tech-Kafka tech-Message Hub">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-messaging/message-hub-rest" >message-hub-rest</a></h2>
+            <p class="description"></p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">9</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">4</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">9</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Kafka</span> <span class="label tech">Message Hub</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Beginner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript language-CSS language-HTML tech-Bluemix tech-Cloudant">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/simple-data-pipe" >simple-data-pipe</a></h2>
+            <p class="description">Simple Data Pipe 1.1</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">4</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">5</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">4</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> <span class="label tech">Cloudant</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> <span class="label language">CSS</span> <span class="label language">HTML</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">undefined</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript language-CSS language-HTML tech-Bluemix tech-Cloudant tech-Compose tech-CouchDB tech-Redis">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/simple-logging-service" >simple-logging-service</a></h2>
+            <p class="description">A lightweight web-tracking app to record user actions on a single-page webapp. Uses Piwik® web analytics library to collect information and Node.js to store data in Redis, RabbitMQ or Kafka</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">6</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">4</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">6</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> <span class="label tech">Cloudant</span> <span class="label tech">Compose</span> <span class="label tech">CouchDB</span> <span class="label tech">Redis</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> <span class="label language">CSS</span> <span class="label language">HTML</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-CSS language-JavaScript language-HTML language-PHP tech-Bluemix">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/6degrees-of-kevin-bacon" >6degrees-of-kevin-bacon</a></h2>
+            <p class="description">Simple demo going through the Erdos number on IBM Graph</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">1</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">2</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">1</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">CSS</span> <span class="label language">JavaScript</span> <span class="label language">HTML</span> <span class="label language">PHP</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Beginner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript tech-Graph Data Store">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/slack-analytics-about-service" >slack-analytics-about-service</a></h2>
+            <p class="description">Simple Slack slash command back-end, illustrating how to query an IBM Graph service</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">0</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">0</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">0</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Graph Data Store</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">undefined</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-JavaScript tech-Bluemix">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/slack-analytics" >slack-analytics</a></h2>
+            <p class="description">Searching Slack with IBM Graph</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">0</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">0</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">0</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">JavaScript</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-CSS language-HTML language-JavaScript tech-Bluemix tech-Redis">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/simple-autocomplete-service" >simple-autocomplete-service</a></h2>
+            <p class="description">Node.js app that uses Redis to provide an autocomplete API on data that is uploaded as text files</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">0</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">1</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">0</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> <span class="label tech">Redis</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">CSS</span> <span class="label language">HTML</span> <span class="label language">JavaScript</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo language-Python language-Jupyter Notebook language-HTML language-JavaScript language-Java tech-Bluemix tech-Cloudant tech-dashDB tech-Jupyter tech-Spark">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="https://github.com/ibm-cds-labs/pixiedust" >pixiedust</a></h2>
+            <p class="description">Python Helper library for Spark IPython Notebooks</p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval">11</span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval">2</span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval">11</span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                <span class="label tech">Bluemix</span> <span class="label tech">Cloudant</span> <span class="label tech">dashDB</span> <span class="label tech">Jupyter</span> <span class="label tech">Spark</span> 
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                <span class="label language">Python</span> <span class="label language">Jupyter Notebook</span> <span class="label language">HTML</span> <span class="label language">JavaScript</span> <span class="label language">Java</span> 
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level">undefined</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 col-sm-9 col-xs-11 repo">
+        <div class="row title">
+          <div class="col-md-12">
+            <h2 class="repotitle"><a href="" ></a></h2>
+            <p class="description"></p>
+          </div>
+        </div>
+
+        <div class="row meta">
+
+          <div id="githubicons" class="col-md-1">
+            <p class="stars">
+              <i class="fa fa-star-o"></i>
+            </p>
+            <p class="forks">
+              <i class="fa fa-code-fork"></i>
+            </p>
+            <p class="watchers">
+              <i class="fa fa-eye"></i>
+            </p>
+          </div>
+
+          <div id="githubmeta" class="col-md-3">
+            <p class="stars">
+              Stars: <span class="githubmetaval"></span>
+            </p>
+            <p class="forks">
+              Forks: &nbsp;<span class="githubmetaval"></span>
+            </p>
+            <p class="watchers">
+              Watchers: <span class="githubmetaval"></span>
+            </p>
+          </div>
+
+          <!-- CDS metadata -->
+          <div class="col-md-8 cdsmeta">
+            <div class="row techs">
+              <div class="col-md-3">
+                Tech:
+              </div>
+              <div class="col-md-9">
+                
+              </div>
+            </div>
+            <div class="row languages">
+              <div class="col-md-3">
+                Languages:
+              </div>
+              <div class="col-md-9">
+                
+              </div>
+            </div>
+            <div class="row levels">
+              <div class="col-md-3">
+                Level:
+              </div>
+              <div class="col-md-9">
+                <span class="label level"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+        <!--</div>-->
+
+      </div>
+    </div>
+
+  <div id="pnext-footer" class="row links-footer" aria-label="Page footer">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <!--<ul id="menu-footer" class="pn-footer-menu pn-il pn-il--center">
+            <li class="pn-footer-menu-item pn-il-item"><a href="http://www.ibm.com/privacy/">IBM Privacy</a></li>
+        </ul>-->
+    </div>
+    <div class="col-md-3 pull-right">
+        &nbsp;
+        <!--<a href="http://ibm.com"><img src="css/IBM-01.png" width="56"></a>-->
+    </div>
+</div>
+</body>
+</html>
