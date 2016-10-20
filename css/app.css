@@ -4,18 +4,24 @@
 */
 
 .repo {
-  color: #FFF;
-  background-color: #004961;
-  border-left: 8px solid #37D7C3;
+  color:  #182c3b;
+  background-color: #929292;
+  border-left: 8px solid #182c3b;
   border-right: 24px solid #fff;
   margin-bottom: 48px;
-  font-size: 12pt;
+  font-size: 10pt;
   /*height: 296px;*/
   padding-bottom: 24px;
 }
 .repotitle {
   border-bottom: 2px dotted #fff;
   line-height: 130%;
+}
+.repotitle a, h2 a {
+  color: #fff;
+}
+.repotitle {
+  border-bottom: 2px dotted #fff;
 }
 .repotitle a, h2 a {
   color: #fff;
@@ -34,15 +40,17 @@
 #githubicons {
   padding-right: 4px !important;
 }
+#githubmeta {
+  padding-left: 0px !important;
+}
 .techs, .languages, .levels {
   margin-bottom: 0.5em;
 }
 .tech, .language, .level {
   margin-right: 4px;
-  font-size: 9pt !important;
+  font-size: 8pt !important;
   border: 0px;
-  font-weight: 500 !important;
-  border-radius: 4px;
+  font-weight: 300 !important;
 }
 
 .tech {
@@ -95,9 +103,8 @@
   /*color: #ddd;*/
   margin-top: 0.15em;
 }
-.navitem a:hover, .hl, .repotitle a:hover {
+.navitem a {
   color: #37D7C3;
-  text-decoration: none;
 }
 .gistpreview {
   max-height: 256px;
